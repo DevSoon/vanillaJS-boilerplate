@@ -7,8 +7,15 @@ export const routes: { [key: string]: () => HTMLElement } = {
     // '/contact': Contact,
 };
 
-export function renderRoute() {
-    const path: string = window.location.hash.split('#')[1] || '/';
+export function renderRoute(path: string) {
     const PageComponent = routes[path] || Home;
     return PageComponent();
+}
+
+export function navigateTo(path: string) {
+    history.pushState({}, '', path);
+    const pageElement = renderRoute(path);
+    const rootElement = document.getElementById('root');
+    rootElement!.innerHTML = '';
+    rootElement!.appendChild(pageElement);
 }

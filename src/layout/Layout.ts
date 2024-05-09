@@ -4,9 +4,9 @@ function Layout(): HTMLElement {
         <header>
             <nav>
                 <ul>
-                    <li><a href="#/">Home</a></li>
-                    <li><a href="#/about">About</a></li>
-                    <li><a href="#/contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -15,9 +15,9 @@ function Layout(): HTMLElement {
     const sideMenu = `
         <aside>
             <ul>
-                <li><a href="#/dashboard">Dashboard</a></li>
-                <li><a href="#/settings">Settings</a></li>
-                <li><a href="#/profile">Profile</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/profile">Profile</a></li>
             </ul>
         </aside>
     `;

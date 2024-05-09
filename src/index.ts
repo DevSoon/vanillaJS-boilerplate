@@ -4,8 +4,6 @@ import './styles/global.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    if (root) {
-        root.appendChild(Layout());
-        root.appendChild(App());
-    }
+    root!.appendChild(Layout());
+    root!.appendChild(App());
 });

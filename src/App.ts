@@ -3,14 +3,17 @@ import { renderRoute } from '@/utils/Router';
 const App = (): HTMLElement => {
     const appElement = document.createElement('div');
 
-    const render = (): void => {
-        const pageElement: HTMLElement = renderRoute();
+    const render = (path: string = '/') => {
+        const pageElement: HTMLElement = renderRoute(path);
         appElement.innerHTML = '';
         appElement.appendChild(pageElement);
     };
 
-    render();
-    window.addEventListener('hashchange', render);
+    render(window.location.pathname);
+
+    window.addEventListener('popstate', () => {
+        render(window.location.pathname);
+    });
 
     return appElement;
 };
